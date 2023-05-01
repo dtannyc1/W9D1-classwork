@@ -1,14 +1,15 @@
 const MovingObject = require("./moving_object");
+const Util = require("./util");
 
-import * as Util from "./util.js";
+// import * as Util from "./util.js";
 
 class Asteroid extends MovingObject{
     static RADIUS = 25;
     static COLOR = "gray";
 
     constructor(options) {
-        options.color = COLOR;
-        options.radius = RADIUS;
+        options.color = Asteroid.COLOR;
+        options.radius = Asteroid.RADIUS;
         options.vel = Util.randomVec(1);
 
         super(options)
