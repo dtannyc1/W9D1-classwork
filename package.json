@@ -1,0 +1,23 @@
+{
+  "name": "classwork",
+  "version": "1.0.0",
+  "description": "The ultra realistic master version of Asteroids with zero bugs",
+  "scripts": {
+    "start": "webpack --watch --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtannyc1/W9D1-classwork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtannyc1/W9D1-classwork/issues"
+  },
+  "homepage": "https://github.com/dtannyc1/W9D1-classwork#readme",
+  "devDependencies": {
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
+  }
+}
