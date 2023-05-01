@@ -11,7 +11,8 @@ class GameView {
     start() {
         let that = this;
         window.setInterval(function() {
-            that.game.moveObjects();
+            // that.game.moveObjects();
+            that.game.step();
             that.game.draw(that.ctx);
         }, 20);
     }

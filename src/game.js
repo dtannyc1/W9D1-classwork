@@ -3,7 +3,7 @@ const Asteroid = require('./asteroid.js')
 class Game {
     static DIM_X = 720;
     static DIM_Y = 720;
-    static NUM_ASTEROIDS = 10;
+    static NUM_ASTEROIDS = 4;
 
     constructor() {
         this.asteroids = this.addAsteroids();
@@ -57,6 +57,24 @@ class Game {
         output[1] = (output[1] + Game.DIM_Y) % Game.DIM_Y;
 
         return output;
+    }
+
+    checkCollisions() {
+        for (let i = 0; i < this.asteroids.length; i++) {
+            for (let j = i+1; j < this.asteroids.length; j++) {
+                let asteroid1 = this.asteroids[i];
+                let asteroid2 = this.asteroids[j];
+
+                if (asteroid1.isCollidedWith(asteroid2)) {
+                    alert("COLLISION");
+                }
+            }
+        }
+    }
+
+    step() {
+        this.moveObjects();
+        this.checkCollisions();
     }
 }
 
