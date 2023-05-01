@@ -11,7 +11,7 @@ class Asteroid extends MovingObject{
         options.color = Asteroid.COLOR;
         options.radius = Asteroid.RADIUS;
         options.vel = Util.randomVec(1);
-
+        
         super(options)
     }
 }

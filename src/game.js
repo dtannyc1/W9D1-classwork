@@ -13,7 +13,9 @@ class Game {
         let output = [];
         let i = 0;
         while (i < Game.NUM_ASTEROIDS) {
-            output.push(new Asteroid(this.randomPosition()))
+            let input = this.randomPosition();
+            input['game'] = this;
+            output.push(new Asteroid(input))
 
             i++
         }
@@ -47,6 +49,14 @@ class Game {
         this.asteroids.forEach(function(asteroid) {
             asteroid.move();
         });
+    }
+
+    wrap(pos) {
+        let output = pos;
+        output[0] = (output[0] + Game.DIM_X) % Game.DIM_X;
+        output[1] = (output[1] + Game.DIM_Y) % Game.DIM_Y;
+
+        return output;
     }
 }
 
