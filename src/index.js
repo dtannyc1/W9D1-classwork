@@ -3,7 +3,6 @@ const MovingObject = require ('./moving_object.js')
 const Asteroid = require ('./asteroid.js')
 const Game = require ('./game.js')
 
-window.MovingObject = MovingObject;
 
 const canvas = document.getElementById("game-canvas");
 const ctx = canvas.getContext("2d")
@@ -18,4 +17,12 @@ const ctx = canvas.getContext("2d")
 // const ast = new Asteroid({ pos: [30,30] });
 // ast.draw(ctx);
 const game = new Game();
+
+canvas.width = Game.DIM_X;
+canvas.height = Game.DIM_Y;
+
+game.draw(ctx);
+
+window.MovingObject = MovingObject;
 window.game = game;
+window.ctx = ctx;
